@@ -1,0 +1,12 @@
+services:
+  myapp:
+    build: .
+    container_name: myapp_frontend
+    hostname: myapp_frontend
+    ports:
+      - '${CLIENT_OUTSIDE_PORT}:${CLIENT_DOCKER_PORT}'
+    restart: always
+
+networks:
+  default:
+    name: nginx_reverse_proxy
