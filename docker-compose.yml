@@ -1,10 +1,15 @@
 services:
   myapp:
-    build: .
+    build:
+      dockerfile: Dockerfile
+      context: .
     container_name: myapp_frontend
     hostname: myapp_frontend
     ports:
       - '${CLIENT_OUTSIDE_PORT}:${CLIENT_DOCKER_PORT}'
+    volumes:
+      - ./client:/client
+      - /client/node_modules
     restart: always
 
 networks:
