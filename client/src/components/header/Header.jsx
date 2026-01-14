@@ -9,9 +9,8 @@ const Header = () => {
   return (
     <div className={styles.header}>
       <span className={styles.title}>
-        Добро пожаловать, у тебя получилось!
+        Добро пожаловать, приложение №1 запущено!
       </span>
-     
     </div>
   )
 }

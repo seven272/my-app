@@ -1,5 +1,6 @@
 FROM node:22-alpine as react-build
 WORKDIR /client
+EXPOSE 5173
 
 # sets env to node_modules in app
 ENV PATH /client/node_modules/.bin:$PATH

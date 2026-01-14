@@ -2,11 +2,13 @@ services:
   myapp:
     build:
       dockerfile: Dockerfile
-      context: .
+      context: ./client
     container_name: myapp_frontend
     hostname: myapp_frontend
+    env_file:
+      - ./client/.env
     ports:
-      - '${CLIENT_OUTSIDE_PORT}:${CLIENT_DOCKER_PORT}'
+      - '3005:5173'
     volumes:
       - ./client:/client
       - /client/node_modules
