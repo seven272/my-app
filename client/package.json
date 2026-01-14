@@ -9,7 +9,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
-  "homepage": "http://prank-sound.ru/my",
+  "homepage": "http://prank-sound.ru/app1",
   "dependencies": {
     "@ant-design/icons": "^5.3.7",
     "@reduxjs/toolkit": "^2.2.5",
