@@ -11,7 +11,7 @@ COPY package-lock.json /client/package-lock.json
 
 RUN npm install
 COPY . /client
-RUN npm run  build
+RUN npm run build
 
 FROM nginx:1.16.0
 COPY --from=react-build /client/dist /usr/share/nginx/html
