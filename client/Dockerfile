@@ -1,17 +1,18 @@
 FROM node:22-alpine as react-build
-WORKDIR /client
-EXPOSE 5173
 
+WORKDIR /client
+
+EXPOSE 5173
 # sets env to node_modules in app
 ENV PATH /client/node_modules/.bin:$PATH
 
-COPY package.json /client/package.json
-COPY package-lock.json /client/package-lock.json
-
+COPY package.json package-lock.json ./
 
 RUN npm install
-COPY . /client
-RUN npm run build
+
+COPY . ./
+
+CMD [ "npm", "run", "build" ]
 
 FROM nginx:1.16.0
 COPY --from=react-build /client/dist /usr/share/nginx/html
