@@ -9,7 +9,6 @@ export default defineConfig({
     port: 5173, // This is the port which we will use in docker
     allowedHosts: ['prank-sound.ru'],
     strictPort: true,
-    origin: "http://localhost:5173",
     // Thanks @sergiomoura for the window fix
     // add the next lines if you're using windows and hot reload doesn't work
     watch: {
