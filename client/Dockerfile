@@ -18,6 +18,7 @@ RUN npm run build
 FROM nginx:1.16.0
 COPY --from=react-build /client/dist /usr/share/nginx/html
 RUN rm /etc/nginx/conf.d/default.conf
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+COPY /client/nginx.conf /etc/nginx/conf.d/default.conf
 RUN chmod -R 777 /usr/share/nginx/html/assets/
+EXPOSE 4000
 CMD ["nginx", "-g", "daemon off;"]
