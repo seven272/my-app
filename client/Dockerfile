@@ -9,12 +9,11 @@ ENV PATH /client/node_modules/.bin:$PATH
 COPY package.json /client/package.json
 COPY package-lock.json /client/package-lock.json
 
-
 RUN npm install
 
 COPY . /client
 
-CMD [ "npm", "run", "build" ]
+RUN npm run build
 
 FROM nginx:1.16.0
 COPY --from=react-build /client/dist /usr/share/nginx/html
