@@ -3,8 +3,8 @@ services:
     build:
       dockerfile: Dockerfile
       context: ./client
-    container_name: myapp_frontend
-    hostname: myapp_frontend
+    container_name: myapp_frontend_container
+    hostname: myapp_frontend_host
     env_file:
       - ./client/.env
     ports:
